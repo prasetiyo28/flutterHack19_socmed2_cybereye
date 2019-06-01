@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:latihan_flutter/login.dart';
+
 
 void main() {
   runApp(MaterialApp(
-    home: Home(),
+    home: Login(),
   ));
 }
 
@@ -35,14 +37,16 @@ class _HomeState extends State<Home> {
             ],
           ),
         ),
+        
         floatingActionButton: new FloatingActionButton(
           onPressed: () {
             _settingModalBottomSheet(context);
           },
           child: new Icon(Icons.add),
         ),
+
         body: Container(
-          color: Colors.grey,
+          color: Colors.grey[300],
           child: ListView(
             children: <Widget>[
               Container(
@@ -78,33 +82,35 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.all(10),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: <Widget>[
-                            Text(
-                              "Lorem Ipsum",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            Text(
-                                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            Image.network(
-                                "https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/03/google-stackoverflow-796x417.png"),
-                            Divider(),
-                            TextFormField(
-                              decoration: new InputDecoration(
-                                icon: Icon(Icons.comment),
-                                labelText: 'Comment',
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: <Widget>[
+                              Text(
+                                "Lorem Ipsum",
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
                               ),
-                            ),
-                          ],
+                              SizedBox(
+                                height: 8,
+                              ),
+                              Text(
+                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."),
+                              SizedBox(
+                                height: 8,
+                              ),
+                              Image.network(
+                                  "https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/03/google-stackoverflow-796x417.png"),
+                              Divider(),
+                              TextFormField(
+                                decoration: new InputDecoration(
+                                  icon: Icon(Icons.comment),
+                                  labelText: 'Comment',
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       )
                     ],
@@ -122,7 +128,6 @@ void _settingModalBottomSheet(context) {
       context: context,
       builder: (BuildContext bc) {
         return Container(
-          padding: EdgeInsets.all(40.0),
           child: new Wrap(
             children: <Widget>[
               Column(
