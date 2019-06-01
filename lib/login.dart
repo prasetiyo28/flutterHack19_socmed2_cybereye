@@ -10,17 +10,20 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.grey[500],
+        
         padding: EdgeInsets.only(top: 50, bottom: 40),
-        child: Material(
-          borderRadius: BorderRadius.circular(10),
+        child: Center(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
+              
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text("Login",
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
                 TextFormField(
+                  
                   decoration: InputDecoration(labelText: 'Username'),
                 ),
                 TextFormField(
